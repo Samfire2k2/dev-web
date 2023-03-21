@@ -3,7 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Conducteur;
-use faker\Factory as Faker;
+use Faker\Factory as Faker;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -22,7 +22,7 @@ class ConducteurFixtures extends Fixture
         ->setEmail("")
         ->setPassword("");
         $manager->persist($conducteur1);
-
         $manager->flush();
+        $this->addReference('conducteur1',$conducteur1);
     }
 }

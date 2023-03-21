@@ -3,11 +3,12 @@
 namespace App\DataFixtures;
 
 use App\Entity\Reservation;
-use faker\Factory as Faker;
+use Faker\Factory as Faker;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
-class ReservationFixtures extends Fixture
+class ReservationFixtures extends Fixture implements DependentFixtureInterface
 {
     /**
      * @param ObjectManager $manager
@@ -19,6 +20,7 @@ class ReservationFixtures extends Fixture
         $faker = Faker::create('fr_FR');
         $reservation1 = new Reservation();
         $reservation1
+        ->setCommentaire($manager->merge($this->getReference('commentaire1')))
         ->setDateReserve($faker->dateTime)
         ->setNbPlaceReserve($faker->numberBetween(1,3))
         ->setPrix($faker->numberBetween(1,3));
@@ -26,11 +28,18 @@ class ReservationFixtures extends Fixture
         
         $reservation2 = new Reservation();
         $reservation2
+        ->setCommentaire($manager->merge($this->getReference('commentaire2')))
         ->setDateReserve($faker->dateTime)
         ->setNbPlaceReserve($faker->numberBetween(1,3))
         ->setPrix($faker->numberBetween(1,3));
         $manager->persist($reservation2);
 
         $manager->flush();
+    }
+    public function getDependencies()
+    {
+        return [
+            CommentaireFixtures::class,
+        ];
     }
 }

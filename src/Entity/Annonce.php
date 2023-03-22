@@ -49,8 +49,6 @@ class Annonce
      */
     private $reservations;
 
-
-
     public function __construct()
     {
         $this->reservations = new ArrayCollection();

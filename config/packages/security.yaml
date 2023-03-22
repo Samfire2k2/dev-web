@@ -1,9 +1,5 @@
 security:
     encoders:
-        App\Entity\Admin:
-            algorithm: auto
-        App\Entity\Conducteur:
-            algorithm: auto
         App\Entity\Passager:
             algorithm: auto
 

@@ -21,6 +21,7 @@ class PassagerFixtures extends Fixture
         $passager1
         ->setEmail("")
         ->setPassword("");
+        //->setRoles()
         $manager->persist($passager1);
 
         $manager->flush();

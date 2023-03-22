@@ -17,7 +17,6 @@ class AnnonceType extends AbstractType
             ->add('dateHeureDep')
             ->add('nbPlacesDispo')
             ->add('prix')
-            ->add('conducteur')
         ;
     }
 

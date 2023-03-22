@@ -8,7 +8,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
-class AnnonceFixtures extends Fixture implements DependentFixtureInterface
+class AnnonceFixtures extends Fixture
 {
     /**
      * @param ObjectManager $manager
@@ -20,7 +20,6 @@ class AnnonceFixtures extends Fixture implements DependentFixtureInterface
         $faker = Faker::create('fr_FR');
         $annonce1 = new Annonce();
         $annonce1
-        ->setConducteur($this->getReference('conducteur1'))
         ->setAdresseDep($faker->address)
         ->setDateHeureDep($faker->dateTime)
         ->setDestination($faker->address)
@@ -30,7 +29,6 @@ class AnnonceFixtures extends Fixture implements DependentFixtureInterface
         
         $annonce2 = new Annonce();
         $annonce2
-        ->setConducteur($this->getReference('conducteur1'))
         ->setAdresseDep($faker->address)
         ->setDateHeureDep($faker->dateTime)
         ->setDestination($faker->address)
@@ -40,7 +38,6 @@ class AnnonceFixtures extends Fixture implements DependentFixtureInterface
 
         $annonce3 = new Annonce();
         $annonce3
-        ->setConducteur($this->getReference('conducteur1'))
         ->setAdresseDep($faker->address)
         ->setDateHeureDep($faker->dateTime)
         ->setDestination($faker->address)
@@ -49,11 +46,5 @@ class AnnonceFixtures extends Fixture implements DependentFixtureInterface
         $manager->persist($annonce3);
 
         $manager->flush();
-    }
-    public function getDependencies()
-    {
-        return [
-            ConducteurFixtures::class,
-        ];
     }
 }

@@ -49,10 +49,7 @@ class Annonce
      */
     private $reservations;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Conducteur::class, inversedBy="annonces")
-     */
-    private $conducteur;
+
 
     public function __construct()
     {
@@ -152,21 +149,5 @@ class Annonce
         }
 
         return $this;
-    }
-
-    public function getConducteur(): ?Conducteur
-    {
-        return $this->conducteur;
-    }
-
-    public function setConducteur(?Conducteur $conducteur): self
-    {
-        $this->conducteur = $conducteur;
-
-        return $this;
-    }
-    public function __toString()
-    {
-        return "".$this->id;
     }
 }

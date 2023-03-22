@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Passager index{% endblock %}
+
+{% block body %}
+    <h1>Passager index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Password</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for passager in passagers %}
+            <tr>
+                <td>{{ passager.id }}</td>
+                <td>{{ passager.email }}</td>
+                <td>{{ passager.roles ? passager.roles|json_encode : '' }}</td>
+                <td>{{ passager.password }}</td>
+                <td>
+                    <a href="{{ path('app_passager_show', {'id': passager.id}) }}">show</a>
+                    <a href="{{ path('app_passager_edit', {'id': passager.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_passager_new') }}">Create new</a>
+{% endblock %}

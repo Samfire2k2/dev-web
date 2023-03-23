@@ -1,6 +1,10 @@
-connexion: Se connecter
-MenuAnnonce: Menu Annonces
-MenuCommentaire: Menu Commentaires
-AnnonceFutur: Annonces Actives
-deconnexion: Se deconnecter
-inscription: S'enregistrer
+connexion: 'Se connecter'
+MenuAnnonce: 'Menu Annonces'
+MenuCommentaire: 'Menu Commentaires'
+AnnonceFutur: 'Annonces Actives'
+deconnexion: 'Se deconnecter'
+inscription: 'S''enregistrer'
+suppression: Suppression
+EditAnnonce: Edit Annonce
+retour: retour
+CreationNouveau: Créer nouveau

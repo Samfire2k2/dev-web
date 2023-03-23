@@ -28,7 +28,9 @@
                 <td>{{ annonce.prix }}</td>
                 <td>
                     <a href="{{ path('app_annonce_show', {'id': annonce.id}) }}">show</a>
+                    {% if app.user %}
                     <a href="{{ path('app_annonce_edit', {'id': annonce.id}) }}">edit</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}
@@ -38,6 +40,7 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_annonce_new') }}">Create new</a>
+    {% if app.user %}
+    <a href="{{ path('app_annonce_new') }}">{{'CreationNouveau'|trans}}</a>
+    {% endif %}
 {% endblock %}

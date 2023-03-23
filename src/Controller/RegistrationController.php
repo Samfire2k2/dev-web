@@ -42,7 +42,8 @@ class RegistrationController extends AbstractController
                 $user,
                 $request,
                 $authenticator,
-                'main' // firewall name in security.yaml
+                'main', // firewall name in security.yaml
+                $this->generateUrl('app_annonce_a_venir') // route to redirect to
             );
         }
 

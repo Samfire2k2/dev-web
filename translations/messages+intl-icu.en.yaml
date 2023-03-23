@@ -3,4 +3,8 @@ MenuAnnonce: 'Ads Menu'
 MenuCommentaire: 'Comment Menu'
 AnnonceFutur: 'Current ads'
 deconnexion: 'Log out'
-inscription: register
+inscription: Register
+suppression: Suppression
+EditAnnonce: Edit Annonce
+retour: Back
+CreationNouveau: Create new

@@ -38,11 +38,6 @@ class Reservation
     private $annonce;
 
     /**
-     * @ORM\OneToOne(targetEntity=Commentaire::class, cascade={"persist", "remove"})
-     */
-    private $commentaire;
-
-    /**
      * @ORM\ManyToOne(targetEntity=Passager::class, inversedBy="reservations")
      */
     private $passager;
@@ -96,18 +91,6 @@ class Reservation
     public function setAnnonce(?Annonce $annonce): self
     {
         $this->annonce = $annonce;
-
-        return $this;
-    }
-
-    public function getCommentaire(): ?Commentaire
-    {
-        return $this->commentaire;
-    }
-
-    public function setCommentaire(?Commentaire $commentaire): self
-    {
-        $this->commentaire = $commentaire;
 
         return $this;
     }

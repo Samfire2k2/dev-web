@@ -16,14 +16,13 @@
     <div class="container-fluid">
         {% if is_granted('ROLE_ADMIN') %}
             <div class="navbar-header">
-                <a class="navbar-brand" href="{{ path('app_annonce_index') }}">Menu Annonce</a>
-                <a class="navbar-brand" href="{{ path('app_commentaire_index') }}">Menu Commentaire</a>
+                <a class="navbar-brand" href="{{ path('app_annonce_index') }}">{{'MenuAnnonce'|trans}}</a>
+                <a class="navbar-brand" href="{{ path('app_commentaire_index') }}">{{'MenuCommentaire'|trans}}</a>
             </div>
         {% endif %}
         {% if is_granted('ROLE_USER') %}
             <div class="navbar-header">
-              <a class="navbar-brand" href="{{ path('app_annonce_a_venir') }}">Annonces à venir</a>  
-              {#  <a class="navbar-brand" href="{{ path('app_commentaire_user') }}">Menu Commentaire</a>#}
+              <a class="navbar-brand" href="{{ path('app_annonce_a_venir') }}">{{'AnnonceFutur'|trans}}</a>  
             </div>
         {% endif %}
 
@@ -31,12 +30,17 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <div>
+                        {% if app.request.locale == 'fr' %}
+                        <a href="{{ path(app.request.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'en'})) }}" class="btn">English</a>
+                        {% else %}
+                        <a href="{{ path(app.request.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}" class="btn">Français</a>
+                        {% endif %}
                         {% if not app.user %}
-                            <a href="{{ path('app_register') }}" class="btn btn-default navbar-btn">S'inscrire</a>
-                            <a href="{{ path('app_login') }}" class="btn btn-default navbar-btn">Se connecter</a>
+                            <a href="{{ path('app_register') }}" class="btn btn-default navbar-btn">{{'inscription'|trans}}</a>
+                            <a href="{{ path('app_login') }}" class="btn btn-default navbar-btn">{{'connexion'|trans}}</a>
                         {% endif %}
                         {% if app.user %}
-                            <a href="{{ path('app_logout') }}" class="btn btn-default navbar-btn">Se deconnecter</a>
+                            <a href="{{ path('app_logout') }}" class="btn btn-default navbar-btn">{{'deconnexion'|trans}}</a>
                         {% endif %}
                     </div>
                 </li>

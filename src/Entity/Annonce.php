@@ -148,4 +148,9 @@ class Annonce
 
         return $this;
     }
+    public function __toString()
+    {
+        return ("Depart de ".$this->adresseDep.", Pour aller a ".$this->Destination);
+    }
 }
+

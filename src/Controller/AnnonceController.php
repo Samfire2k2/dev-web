@@ -14,7 +14,7 @@ use Symfony\Component\Security\Core\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
- * @Route("/annonce")
+ * @Route("/{_locale}/annonce")
  */
 class AnnonceController extends AbstractController
 {

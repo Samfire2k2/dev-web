@@ -20,7 +20,7 @@ class ReservationFixtures extends Fixture implements DependentFixtureInterface
         $faker = Faker::create('fr_FR');
         $reservation1 = new Reservation();
         $reservation1
-        ->setCommentaire($manager->merge($this->getReference('commentaire1')))
+
         ->setDateReserve($faker->dateTime)
         ->setNbPlaceReserve($faker->numberBetween(1,3))
         ->setPrix($faker->numberBetween(1,3));
@@ -28,7 +28,6 @@ class ReservationFixtures extends Fixture implements DependentFixtureInterface
         
         $reservation2 = new Reservation();
         $reservation2
-        ->setCommentaire($manager->merge($this->getReference('commentaire2')))
         ->setDateReserve($faker->dateTime)
         ->setNbPlaceReserve($faker->numberBetween(1,3))
         ->setPrix($faker->numberBetween(1,3));

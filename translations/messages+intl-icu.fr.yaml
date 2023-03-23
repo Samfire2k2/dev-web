@@ -5,6 +5,18 @@ AnnonceFutur: 'Annonces Actives'
 deconnexion: 'Se deconnecter'
 inscription: 'S''enregistrer'
 suppression: Suppression
-EditAnnonce: Edit Annonce
+EditAnnonce: 'Edit Annonce'
 retour: retour
-CreationNouveau: Créer nouveau
+CreationNouveau: 'Créer nouveau'
+MenuReservation: 'Menu Reservation'
+id: Id
+AdresseDep: 'Adresse depart'
+Destination: Destination
+dateHeureDep: 'Date du depart'
+nbPlacesDispo: 'Nombre de places dispo'
+prix: Prix
+PleaseSignIn: 'Veuillez vous connecter'
+mail: Mail
+mdp: 'Mot de passe'
+Annonce: Annonce
+edit: Edit

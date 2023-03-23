@@ -5,6 +5,18 @@ AnnonceFutur: 'Current ads'
 deconnexion: 'Log out'
 inscription: Register
 suppression: Suppression
-EditAnnonce: Edit Annonce
+EditAnnonce: 'Edit Annonce'
 retour: Back
-CreationNouveau: Create new
+CreationNouveau: 'Create new'
+MenuReservation: 'Reservation Menu'
+id: Id
+AdresseDep: 'Start location'
+Destination: Destination
+dateHeureDep: Date
+nbPlacesDispo: 'number of places available'
+prix: Price
+PleaseSignIn: 'Please sign in'
+mail: Mail
+mdp: Password
+Annonce: Annonce
+edit: Edit

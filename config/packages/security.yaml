@@ -29,6 +29,7 @@ security:
                 # where to redirect after logout
                 target: app_annonce_a_venir
             form_login:
+
                 always_use_default_target_path: true
                 default_target_path: /path/to/redirect/after/login
 

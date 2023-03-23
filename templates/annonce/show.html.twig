@@ -8,27 +8,27 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>{{'id'|trans}}</th>
                 <td>{{ annonce.id }}</td>
             </tr>
             <tr>
-                <th>AdresseDep</th>
+                <th>{{'AdresseDep'|trans}}</th>
                 <td>{{ annonce.adresseDep }}</td>
             </tr>
             <tr>
-                <th>Destination</th>
+                <th>{{'Destination'|trans}}</th>
                 <td>{{ annonce.Destination }}</td>
             </tr>
             <tr>
-                <th>DateHeureDep</th>
+                <th>{{'dateHeureDep'|trans}}</th>
                 <td>{{ annonce.dateHeureDep ? annonce.dateHeureDep|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>NbPlacesDispo</th>
+                <th>{{'nbPlacesDispo'|trans}}</th>
                 <td>{{ annonce.nbPlacesDispo }}</td>
             </tr>
             <tr>
-                <th>Prix</th>
+                <th>{{'prix'|trans}}</th>
                 <td>{{ annonce.prix }}</td>
             </tr>
         </tbody>
@@ -36,7 +36,7 @@
 
     <a href="{{ path('app_annonce_index') }}">{{'retour'|trans}}</a>
 
-    <a href="{{ path('app_annonce_edit', {'id': annonce.id}) }}">edit</a>
+    <a href="{{ path('app_annonce_edit', {'id': annonce.id}) }}">{{'edit'|trans}}</a>
 
     {{ include('annonce/_delete_form.html.twig') }}
 {% endblock %}

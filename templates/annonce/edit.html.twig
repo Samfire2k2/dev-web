@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Annonce{% endblock %}
+{% block title %}{{'EditAnnonce'|trans}}{% endblock %}
 
 {% block body %}
     <h1>{{'EditAnnonce'|trans}}</h1>
 
-    {{ include('annonce/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('annonce/_form.html.twig', {'button_label': '{{'update'|trans}}'}) }}
 
     <a href="{{ path('app_annonce_index') }}">{{'retour'|trans}}</a>
 

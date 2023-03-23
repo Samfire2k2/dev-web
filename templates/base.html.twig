@@ -18,6 +18,7 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="{{ path('app_annonce_index') }}">{{'MenuAnnonce'|trans}}</a>
                 <a class="navbar-brand" href="{{ path('app_commentaire_index') }}">{{'MenuCommentaire'|trans}}</a>
+                <a class="navbar-brand" href="{{ path('app_reservation_index') }}">{{'MenuReservation'|trans}}</a>
             </div>
         {% endif %}
         {% if is_granted('ROLE_USER') %}

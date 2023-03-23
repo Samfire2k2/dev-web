@@ -47,6 +47,18 @@ class AnnonceRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+    * @return Annonce[]
+    */
+    public function getAnnoncesNonExpirees()
+    {
+        $qb = $this->createQueryBuilder('s')
+        ->where('s.dateHeureDep > :date')
+        ->setParameter('date', new \DateTime());
+        return $qb->getQuery()->getResult();
+    }
+
+
     // /**
     //  * @return Annonce[] Returns an array of Annonce objects
     //  */

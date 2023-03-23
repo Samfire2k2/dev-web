@@ -22,7 +22,7 @@
         {% endif %}
         {% if is_granted('ROLE_USER') %}
             <div class="navbar-header">
-               {# <a class="navbar-brand" href="{{ path('app_trajet_a_venir') }}">Menu Trajet</a> #}
+              <a class="navbar-brand" href="{{ path('app_annonce_a_venir') }}">Annonces à venir</a>  
               {#  <a class="navbar-brand" href="{{ path('app_commentaire_user') }}">Menu Commentaire</a>#}
             </div>
         {% endif %}
@@ -32,6 +32,7 @@
                 <li>
                     <div>
                         {% if not app.user %}
+                            <a href="{{ path('app_register') }}" class="btn btn-default navbar-btn">S'inscrire</a>
                             <a href="{{ path('app_login') }}" class="btn btn-default navbar-btn">Se connecter</a>
                         {% endif %}
                         {% if app.user %}

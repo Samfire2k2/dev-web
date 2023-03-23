@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Passager;
 use App\Entity\Annonce;
 use App\Form\AnnonceType;
 use App\Repository\AnnonceRepository;
@@ -9,6 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("/annonce")
@@ -17,11 +20,27 @@ class AnnonceController extends AbstractController
 {
     /**
      * @Route("/", name="app_annonce_index", methods={"GET"})
+     * @param Request $request
+     * @param EntityManagerInterface $em
+     * @param Security $security
+     * @return RedirectResponse|Response
+     * Require ROLE_ADMIN for  method create in this class
+     * @IsGranted("ROLE_ADMIN")
      */
     public function index(AnnonceRepository $annonceRepository): Response
     {
         return $this->render('annonce/index.html.twig', [
             'annonces' => $annonceRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/list", name="app_annonce_a_venir", methods={"GET"})
+     */
+    public function indexUser(AnnonceRepository $annonceRepository): Response
+    {
+        return $this->render('annonce/index.html.twig', [
+            'annonces' => $annonceRepository->getAnnoncesNonExpirees(),
         ]);
     }
 

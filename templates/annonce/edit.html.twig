@@ -5,7 +5,7 @@
 {% block body %}
     <h1>{{'EditAnnonce'|trans}}</h1>
 
-    {{ include('annonce/_form.html.twig', {'button_label': '{{'update'|trans}}'}) }}
+    {{ include('annonce/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('app_annonce_index') }}">{{'retour'|trans}}</a>
 

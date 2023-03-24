@@ -6,6 +6,7 @@ use App\Entity\Passager;
 use App\Entity\Annonce;
 use App\Form\AnnonceType;
 use App\Repository\AnnonceRepository;
+use phpDocumentor\Reflection\Types\String_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -44,6 +45,18 @@ class AnnonceController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/critere", name="app_annonce_search", methods={"GET", "POST"})
+     */
+    public function RechercheVilleDep(Request $request, AnnonceRepository $annonceRepository): Response
+{
+    $villeDep = $request->query->get('villeDep');
+    $Destination = $request->query->get('Destination');
+    $annonces = $annonceRepository->getVilleDep($villeDep, $Destination);
+    return $this->render('annonce/index.html.twig', [
+        'annonces' => $annonces,
+    ]);
+}
     /**
      * @Route("/new", name="app_annonce_new", methods={"GET", "POST"})
      */

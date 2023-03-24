@@ -57,7 +57,16 @@ class AnnonceRepository extends ServiceEntityRepository
         ->setParameter('date', new \DateTime());
         return $qb->getQuery()->getResult();
     }
-
+    public function getVilleDep($villedep, $Destination)
+    {
+        $qb = $this->createQueryBuilder('s')
+        ->where('s.adresseDep LIKE :villed')
+        ->andWhere('s.Destination LIKE :Destination')
+        ->setParameter('villed', $villedep)
+        ->setParameter('Destination', $Destination);
+        return $qb->getQuery()->getResult();
+    }
+    
 
     // /**
     //  * @return Annonce[] Returns an array of Annonce objects
